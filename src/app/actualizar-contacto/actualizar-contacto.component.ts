@@ -16,14 +16,14 @@ export class ActualizarContactoComponent implements OnInit {
   formGroup: FormGroup;
   durationInSeconds = 5;
   celular = this.rutaActiva.snapshot.params.celular;
-  constructor(private location: Location, private rutaActiva:ActivatedRoute, private formBuilder:FormBuilder, public dialog: MatDialog,private _snackBar: MatSnackBar) { }
-  
+  constructor(private location: Location, private rutaActiva: ActivatedRoute, private formBuilder: FormBuilder, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
+
   ngOnInit(): void {
     let contactoEncontrado: Contacto = this.consultarContactos().find(c => c.celular == this.celular);
     this.contruirFormulario(contactoEncontrado);
   }
 
-  private contruirFormulario(contacto:Contacto) {
+  private contruirFormulario(contacto: Contacto) {
     this.contacto = contacto;
     this.formGroup = this.formBuilder.group({
       identificacion: [this.contacto.identificacion, Validators.required],
@@ -51,19 +51,19 @@ export class ActualizarContactoComponent implements OnInit {
 
   volver() {
     this.location.back();
-}
+  }
 
 
   guardarContacto() {
     this.contacto = this.formGroup.value;
     let contactos: Contacto[] = [];
-    
+
     if (this.consultarContactos() != null) {
       contactos = this.consultarContactos();
     }
 
-    let index = contactos.findIndex(c=> c.celular == this.celular);
-    contactos.splice(index,1,this.contacto);
+    let index = contactos.findIndex(c => c.celular == this.celular);
+    contactos.splice(index, 1, this.contacto);
 
     localStorage.setItem('contactos', JSON.stringify(contactos));
     this._snackBar.openFromComponent(ConfirmacionActualizacionComponent, {

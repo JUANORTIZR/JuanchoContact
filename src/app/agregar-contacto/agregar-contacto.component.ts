@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 })
 export class AgregarContactoComponent implements OnInit {
   formGroup: FormGroup;
+  
   contacto: Contacto;
   durationInSeconds = 5;
   constructor(private location: Location, private formBuilder: FormBuilder, public dialog: MatDialog,private _snackBar: MatSnackBar) { }

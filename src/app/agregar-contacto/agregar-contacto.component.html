@@ -44,7 +44,7 @@
     </mat-form-field>
 
     <mat-toolbar>
-        <button class="botonCancelar" mat-raised-button color="warn" type="reset">Cancelar</button>
+        <button class="botonCancelar" mat-raised-button color="warn" (click)="volver()">Cancelar</button>
 
         <span class="example-spacer"></span>
         <button mat-raised-button color="primary" (click)="enviar()"

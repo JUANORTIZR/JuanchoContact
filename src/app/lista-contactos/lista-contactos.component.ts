@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmacionEliminarComponent } from '../Mensajes/confirmacion-eliminar/confirmacion-eliminar.component';
 import { Contacto } from '../models/contacto';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-lista-contactos',
   templateUrl: './lista-contactos.component.html',
   styleUrls: ['./lista-contactos.component.scss']
 })
 export class ListaContactosComponent implements OnInit {
+  textoBuscar: string;
   contactos: Contacto[] = [];
   durationInSeconds = 5;
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, private location:Location) { }
 
   ngOnInit(): void {
     this.contactos = this.consultarContactos();
@@ -33,4 +34,8 @@ export class ListaContactosComponent implements OnInit {
     }
 
   }
+  volver() {
+    this.location.back();
+  }
+
 }

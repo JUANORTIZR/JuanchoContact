@@ -13,7 +13,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { AgregarContactoComponent } from './agregar-contacto/agregar-contacto.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmacionDeregistroComponent } from './Mensajes/confirmacion-deregistro/confirmacion-deregistro.component';
 import { ContactoExistenteComponent } from './Mensajes/contacto-existente/contacto-existente.component';
@@ -21,6 +21,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmacionEliminarComponent } from './Mensajes/confirmacion-eliminar/confirmacion-eliminar.component';
 import { ActualizarContactoComponent } from './actualizar-contacto/actualizar-contacto.component';
 import { ConfirmacionActualizacionComponent } from './Mensajes/confirmacion-actualizacion/confirmacion-actualizacion.component';
+import { FiltroContactosPipe } from './pipes/filtro-contactos.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { ConfirmacionActualizacionComponent } from './Mensajes/confirmacion-actu
     ConfirmacionEliminarComponent,
     ActualizarContactoComponent,
     ConfirmacionActualizacionComponent,
+    FiltroContactosPipe,
   ],
   imports: [
     MatCardModule,
@@ -45,7 +47,8 @@ import { ConfirmacionActualizacionComponent } from './Mensajes/confirmacion-actu
     MatIconModule,
     MatDialogModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
