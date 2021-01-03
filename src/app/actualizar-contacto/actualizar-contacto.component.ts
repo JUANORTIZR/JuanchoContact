@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { ConfirmacionDeregistroComponent } from '../Mensajes/confirmacion-deregistro/confirmacion-deregistro.component';
 import { Contacto } from '../models/contacto';
 import { Location } from '@angular/common';
+import { ConfirmacionActualizacionComponent } from '../Mensajes/confirmacion-actualizacion/confirmacion-actualizacion.component';
 @Component({
   selector: 'app-actualizar-contacto',
   templateUrl: './actualizar-contacto.component.html',
@@ -66,7 +66,7 @@ export class ActualizarContactoComponent implements OnInit {
     contactos.splice(index,1,this.contacto);
 
     localStorage.setItem('contactos', JSON.stringify(contactos));
-    this._snackBar.openFromComponent(ConfirmacionDeregistroComponent, {
+    this._snackBar.openFromComponent(ConfirmacionActualizacionComponent, {
       duration: this.durationInSeconds * 1000,
     });
     this.formGroup.reset();

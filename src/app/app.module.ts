@@ -20,6 +20,7 @@ import { ContactoExistenteComponent } from './Mensajes/contacto-existente/contac
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmacionEliminarComponent } from './Mensajes/confirmacion-eliminar/confirmacion-eliminar.component';
 import { ActualizarContactoComponent } from './actualizar-contacto/actualizar-contacto.component';
+import { ConfirmacionActualizacionComponent } from './Mensajes/confirmacion-actualizacion/confirmacion-actualizacion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { ActualizarContactoComponent } from './actualizar-contacto/actualizar-co
     ContactoExistenteComponent,
     ConfirmacionEliminarComponent,
     ActualizarContactoComponent,
+    ConfirmacionActualizacionComponent,
   ],
   imports: [
     MatCardModule,
