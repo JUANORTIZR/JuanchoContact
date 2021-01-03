@@ -1,0 +1,36 @@
+.ItemLista{
+    margin-top: 8px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.textoNombre{
+    font-size: medium;
+    margin-top: 15px;
+    margin-bottom: -13px;
+}
+
+.textoNumero{
+    margin-top: -10px;
+    font-size: small;
+}
+
+.textoCumple{
+    margin-top: -30px;
+    font-size: x-small;
+}
+.botonAgregar{
+    
+    margin: auto;
+    text-align: right;
+}
+#iconoContacto{
+    margin-top: 8px;
+    margin-right: 4px;
+    font-size: 50px;
+}
+.material-icons{
+    cursor: pointer;
+}

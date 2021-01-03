@@ -1,0 +1,19 @@
+
+    <mat-card class="Card-Contador">
+        <p class="Text-contador">{{totalContactos}}</p>
+        <p class="Text-titulo">Total de contactos</p>
+    </mat-card>
+    <mat-card class="Card-Contador">
+        <p class="Text-contador">{{totalCumples}}</p>
+        <p class="Text-titulo">Numero de cumpleaños hoy</p>
+    </mat-card>
+    <mat-card class="Card-boton" [routerLink]="['/listaContactos']">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">contacts</mat-icon> 
+        <p class="Text-titulo-boton">Mis contactos</p>
+    </mat-card>
+    <div class="botonAgregar">
+        <button [routerLink]="['/agregarContacto']" mat-mini-fab color="accent" aria-label="Agregar un nuveo contacto">
+            <mat-icon>person_add</mat-icon>
+        </button>
+    </div>
+

@@ -1,0 +1,56 @@
+<mat-icon style="cursor: pointer;" (click)="volver()">arrow_back</mat-icon>
+
+<form class="FormularioRegistro" [formGroup]="formGroup">
+    <h1>Crear contacto</h1>
+    <mat-form-field class="example-full-width">
+        <mat-label>Identificacion</mat-label>
+        <input matInput placeholder="Escribe aqui tu numero de identificacion" formControlName="identificacion"
+            [ngClass]="{ 'is-invalid': control.identificacion.errors && control.identificacion.touched}">
+        <mat-error *ngIf="control.identificacion.errors && control.identificacion.touched">
+            La identificacion es <strong>requerida</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput placeholder="Escribe aqui tu nombre completo" formControlName="nombre"
+        [ngClass]="{ 'is-invalid': control.nombre.errors && control.nombre.touched}">
+    <mat-error *ngIf="control.nombre.errors && control.nombre.touched">
+        El nombre es <strong>requerido</strong>
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Celular</mat-label>
+        <input matInput placeholder="Escribe aqui tu numero de celular" formControlName="celular"
+        [ngClass]="{ 'is-invalid': control.celular.errors && control.celular.touched}">
+    <mat-error *ngIf="control.celular.errors && control.celular.touched">
+        El numero de celular es <strong>requerido</strong>
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Direccion</mat-label>
+        <input matInput placeholder="Escribe aqui tu direccion" formControlName="direccion"
+        [ngClass]="{ 'is-invalid': control.direccion.errors && control.direccion.touched}">
+    <mat-error *ngIf="control.direccion.errors && control.direccion.touched">
+        La direccion es <strong>requerida</strong>
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Fecha de cumpleaños</mat-label>
+        <input type="date" matInput placeholder="Ej. 12/12/1998" formControlName="fechaCumple"
+        [ngClass]="{ 'is-invalid': control.fechaCumple.errors && control.fechaCumple.touched}">
+    <mat-error *ngIf="control.fechaCumple.errors && control.fechaCumple.touched">
+        La fecha de cumpleaños es <strong>requerida</strong>
+    </mat-error>
+    </mat-form-field>
+
+    <mat-toolbar>
+        <button class="botonCancelar" mat-raised-button color="warn" type="reset">Cancelar</button>
+
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="primary" (click)="enviar()"
+        [disabled]="formGroup.invalid">Guardar</button>
+    </mat-toolbar>
+
+
+
+</form>

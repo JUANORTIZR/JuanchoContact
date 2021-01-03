@@ -1,0 +1,27 @@
+<mat-icon [routerLink]="['/inicio']">arrow_back</mat-icon>
+
+<div class="botonAgregar">
+    <button [routerLink]="['/agregarContacto']" mat-mini-fab color="accent" aria-label="Agregar un nuveo contacto">
+        <mat-icon>person_add</mat-icon>
+    </button>
+</div>
+<mat-toolbar class="ItemLista" *ngFor='let contacto of contactos; index as i'>
+   <div>
+    <span id="iconoContacto" class="material-icons">
+        account_circle
+    </span>
+   </div>
+    <div>
+        <p class="textoNombre">{{contacto.nombre}}</p>
+        <p class="textoNumero"> {{contacto.celular}}</p>
+        <p class="textoCumple"> {{contacto.fechaCumple}}</p>
+    </div>
+    <span class="example-spacer"></span>
+    <span routerLink='/actualizarContacto/{{contacto.celular}}' class="material-icons">
+        edit
+    </span>
+    <span (click)=" EliminarContacto(contacto)" class="material-icons">
+        delete
+    </span>
+
+</mat-toolbar>
